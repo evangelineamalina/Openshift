@@ -1,0 +1,47 @@
+Overview:
+- OpenShift is based on existing technologies such as containers and Kubernetes
+- Kubernetes provides many features to build clusters of servers that run containerized applications.
+- OpenShift builds on the extension points of Kubernetes to provide a complete platform
+- Containers are created from a container image, which includes all the runtime dependencies of the application
+- The Open Container Initiative (OCI) maintains standards about containers, container images, and container runtimes.
+- Kubernetes is a platform that simplifies the deployment, management, and scaling of containerized applications.
+- Kubernetes creates a cluster that runs applications across multiple nodes
+- If a node fails, then Kubernetes can restart an application in a different node.
+- Kubernetes administrators write a definition of the workloads to execute in the cluster,
+- Kubernetes ensures that the running workloads match the definition
+- A pod is one or multiple containers that run in the same cluster node.
+- a job is a workload that runs a task in a pod until completion.
+
+Features:
+- Service discovery and load balancing:
+    - Kubernetes automatically configures networking and provides a DNS service for pods
+    - Kubernetes can evenly split incoming requests to an NGINX web server by considering the availability of the NGINX pods
+- Horizontal scaling
+    - Kubernetes can monitor the load on a service, and create or delete pods to adapt to the load.
+    -  Kubernetes can also provision nodes dynamically to accommodate cluster load.
+- Self-healing
+    - If applications declare health check procedures, then Kubernetes can monitor, restart, and reschedule failing or unavailable applications
+    - Self-healing protects applications both from internal failure (the application stops unexpectedly) or external failure (the node that runs the application becomes unavailable).
+- Automated rollout
+    - Kubernetes can gradually roll out updates to your application's containers.
+    - If something goes wrong during the rollout, then Kubernetes can roll back to the previous version of the deployment
+- Secrets and configuration management
+    - You can manage the configuration settings and secrets of your applications without requiring changes to containers. 
+    - Kubernetes does not encrypt secrets.
+Operators
+    - Operators are packaged Kubernetes applications that can manage Kubernetes workloads in a declarative manner.
+    - If the user creates a database resource, then the operator creates the necessary workloads to deploy the database, configure replication, and back up automatically.
+
+
+Kubernetes Architectural Concepts:
+    - Control plane nodes provide global cluster coordination for scheduling the deployed workloads. These nodes also manage the state of the cluster configuration in response to cluster events and requests.
+    - Compute plane nodes run the user workloads.
+
+The Kubernetes API and Configuration Model:
+    - Administrators define workloads in terms of resources.
+    - Tools such as the kubectl command can manage resources of all types, even custom resource types.
+    - Kubernetes can import and export resources as text files.
+    -  By working with resource definitions in text formats, administrators can describe their workloads instead of performing the right sequence of operations to create them. This approach is called declarative resource management.
+    - To support declarative resource management, Kubernetes uses controllers that continuously track the state of the cluster and perform the necessary steps to keep the cluster in the intended state.
+    - Kubernetes also supports namespaces.
+    - Administrators can define permissions for namespaces, to allow specific users to view or modify resources.
