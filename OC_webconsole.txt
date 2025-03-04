@@ -1,0 +1,28 @@
+- The Red Hat OpenShift Web Console provides a graphical user interface to perform many administrative tasks for managing a cluster.
+- The web console uses the Kubernetes APIs and OpenShift extension APIs to deliver a robust graphical experience.
+- he web console provides ease of access and management for the complex tasks that cluster administration requires.
+- The OpenShift web console is not related to the Kubernetes dashboard, but is a separate tool for managing OpenShift clusters
+- From a terminal, you must first authenticate to the cluster via the CLI by using the oc login -u <USERNAME> -p <PASSWORD> <API_ENDPOINT>:<PORT> command:
+
+Authnticate to the cluster using CLI
+> oc login -u user -p password https://api.ocp4.example.com 
+
+To retrievce web console URL:
+>oc whoami --show-console 
+
+perspectives
+    - Administrators -> focuses on cluster configuration, deployments, and operations of the cluster and running workloads
+    - Developers -> focus on creating and running applications
+
+Key Concepts:
+    Pods: The smallest unit of a Kubernetes-managed containerized application. A pod consists of one or more containers.
+
+    Deployments: The operational unit that provides granular management of a running application.
+
+    Projects: A Kubernetes namespace with additional annotations that provide multitenancy scoping for applications.
+
+    Routes: Networking configuration to expose your applications and services to resources outside the cluster.
+
+    Operators: Packaged Kubernetes applications that extend cluster functions.
+
+Clusters --> nodes --> pods --> containers

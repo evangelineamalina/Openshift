@@ -45,3 +45,21 @@ The Kubernetes API and Configuration Model:
     - To support declarative resource management, Kubernetes uses controllers that continuously track the state of the cluster and perform the necessary steps to keep the cluster in the intended state.
     - Kubernetes also supports namespaces.
     - Administrators can define permissions for namespaces, to allow specific users to view or modify resources.
+
+Monitoring in OC:
+    - In Kubernetes, a node is any single system in the cluster where pods can run
+    - Nodes run the necessary services to communicate within the cluster, and receive control plane operational requests
+    - A MachineConfig resource defines the initial state and any changes to files, services, operating system updates, and critical OpenShift service versions for the kubelet and cri-o services
+    - OpenShift relies on the Machine Config Operator (MCO) to maintain the operating systems and configuration of the cluster machines.
+    - The MCO is a cluster-level operator that ensures the correct configuration of each machine
+    - After a MachineConfig change, the MCO orchestrates the execution of the changes for all affected nodes.
+    - navigate to Compute → Nodes to view the list of all nodes in the cluster.
+    - An OpenShift node debug pod is an interface to a container that runs on the node.
+    - Observe → Metrics to visualize gathered metrics by using a Grafana-based data query utility
+    - Observe → Alerting to view firing alerts, and filter on the alert severity to view those alerts that need remediation
+    - The Home → Events page shows the events for all projects or for a specific project
+    - HOCP includes the API Explorer feature, for users to view the catalog of Kubernetes resource types that are available within the cluster
+
+Command to view the status of the kubelet & crio service in a node     
+>systemctl status crio
+>syatemctl ststus kubelet

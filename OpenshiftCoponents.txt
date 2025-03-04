@@ -1,4 +1,5 @@
 Red Hat OpenShift Components and Editions
+Red Hat OpenShift Container Platform (RHOCP) adds enterprise-class functions to the Kubernetes container platform to deliver the wider business needs.
 - Integrated developer workflow:
     - OpenShift integrates a built-in container registry, CI/CD pipelines, and S2I, a tool to build artifacts from source repositories to container images.
 - Observability
